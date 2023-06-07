@@ -17,7 +17,7 @@ export default function BikeListDisplay() {
       });
       
   }, []);
-  console.log(bikeList[6]);
+//  console.log(bikeList[6]);
 
   function listToElements() {
     return bikeList.map(bike => (

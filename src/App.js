@@ -15,6 +15,7 @@ import BikeForm from './Components/BikeForm'
 import serverConnection from './Components/ServerConnection';
 import BikeListDisplay from './Components/BikeListDisplay';
 import MyBikes from './Components/MyBikes';
+import Registration from './Components/Registration';
 import './App.css';
 import '@progress/kendo-theme-default/dist/all.css';
 
@@ -23,6 +24,7 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<LandingPage Header={Header} serverConnection={serverConnection} />} />
+        <Route path="/registration" element={<Registration Header={Header}/>} />
         <Route path="/webshop/bikes" element={<ChooseNewOrUsed Header={Header} />} />
         <Route path="/webshop/bikes/new" element={<NewBike Header={Header} />} />
         <Route path="/webshop/bikes/used" element={<Bike Header={Header} BikeListDisplay={BikeListDisplay} />} />
@@ -36,7 +38,7 @@ function App() {
         <Route path="/profile/bikes" element={<MyBikes />}/>
         <Route path="/profile/tours" element={<Profile Header={Header} />} />
         <Route path="/profile/appointments" element={<Profile Header={Header} />} />
-        <Route path="/logout" element={<LandingPage Header={Header} />} />
+        <Route path="/logout" element={<LandingPage Header={Header} serverConnection={serverConnection} />} />
         <Route path="/cart" element={<ShoppingCart Header={Header} />} />
         <Route path="/tours" element={<Tours Header={Header} />} />
         <Route path="/service" element={<Service Header={Header} />} />
